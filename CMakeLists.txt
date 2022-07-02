@@ -28,7 +28,7 @@ add_executable(Compiler.exe)
 
 target_link_libraries(Compiler.exe PUBLIC Main)
 target_link_libraries(Compiler.exe PUBLIC DynString)
-
+target_link_libraries(Compiler.exe PUBLIC DynArray)
 
 
 add_custom_target(run

@@ -6,14 +6,10 @@ DynString::DynString(int capacity){
         初始化动态字符串
         capacity:动态字符串初始化内存空间
     */
-    if(this->data!=nullptr){
-        this->data = new char[capacity];
-        this->len=0;
-        this->capacity=capacity;
-    }
-    else{
-        std::cout<<"DynString: constructor error\n";
-    }
+    
+    this->data = new char[capacity];
+    this->len=0;
+    this->capacity=capacity;
 }
 
 DynString::~DynString(){
@@ -23,6 +19,7 @@ DynString::~DynString(){
    if(this->data){
        delete[] this->data;
    }
+   this->data=nullptr;
    this->len=0;
    this->capacity=0;
 }
