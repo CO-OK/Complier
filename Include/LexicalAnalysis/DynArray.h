@@ -6,6 +6,7 @@ public:
     void** data; //指针数组
 
     DynArray(int capacity);
+    DynArray();
     ~DynArray();
     void realloc(int new_size); //重新分配容量
     void append(void *data); //追加数组元素

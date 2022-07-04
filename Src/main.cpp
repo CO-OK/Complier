@@ -1,11 +1,9 @@
 #include<iostream>
-#include<TokenCode.h>
-#include<DynString.h>
-#include<DynArray.h>
+#include<TkWord&TkTable.h>
 using namespace std;
 int main(){
-    cout<<"success"<<endl;
+    //cout<<"success"<<endl;
     //return 0;
-    DynArray a(7);
+    TkTable table;
     
 }

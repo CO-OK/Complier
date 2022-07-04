@@ -24,6 +24,7 @@ public:
     TkWord* tk_hashtable[MAXKEY]; //单词哈希表
     DynArray tktable; // 单词表
 
+    TkTable();
     TkWord* tkwordDirectInsert(TkWord*tp);//运算符、关键字、常量直接放入单词表
     TkWord* tkwordFind(char* p,int keyno);//在单词表中查找单词
     TkWord* tkwordInsert(char*p);//标识符插入单词表

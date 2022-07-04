@@ -1,6 +1,6 @@
 #include<DynArray.h>
 #include<iostream>
-
+#define DEFAUT_CAPACITY 8
 DynArray::DynArray(int capacity){
     /*
         初始化动态数组
@@ -15,16 +15,18 @@ DynArray::~DynArray(){
     /*
         释放动态数组
     */
+   
    for(int i=0;i<this->len;i++){
-       if(this->data[i]){
-           delete this->data[i];
+       if(this->data[i]!=nullptr){
+           //delete this->data[i];
            this->data[i]=nullptr;
        }
    }
-   delete[] this->data;
+   delete this->data;
    this->data=nullptr;
    this->len=0;
    this->capacity=0;
+
 }
 
 void DynArray::realloc(int new_size){
@@ -45,7 +47,7 @@ void DynArray::realloc(int new_size){
     for(int i=0;i<this->len;i++){
        if(this->data[i]){
            new_data[i]=this->data[i];
-           delete this->data[i];
+           //delete this->data[i];
            this->data[i]=nullptr;
        }
        else{
@@ -53,7 +55,7 @@ void DynArray::realloc(int new_size){
            break;
        }
    }
-   delete[] this->data;
+   delete this->data;
    this->data=new_data;
    this->capacity=new_capacity;
 }
@@ -80,4 +82,10 @@ int DynArray::search(int key){
         return i;
    }
    return -1;
+}
+
+DynArray::DynArray(){
+    this->data = new void*[DEFAUT_CAPACITY];
+    this->len=0;
+    this->capacity=DEFAUT_CAPACITY;
 }
