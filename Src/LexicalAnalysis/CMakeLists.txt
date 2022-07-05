@@ -11,3 +11,8 @@ add_library(TkWord_TkTable
     OBJECT
     TkWord&TkTable.cpp
 )
+
+add_library(LexicalAnalyzer
+    OBJECT
+    LexicalAnalyzer.cpp
+)

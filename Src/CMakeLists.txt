@@ -2,3 +2,9 @@
     OBJECT
     main.cpp
 )
+
+add_library(Error
+    OBJECT
+    Error.cpp
+)
+

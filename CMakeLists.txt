@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(Complier LANGUAGES CXX)
 
 # 编译选项
-SET(CFLAGS "-Wwrite-strings")
+SET(CFLAGS "")
 SET(CMAKE_C_FLAGS "${CFLAGS}")
 
 
@@ -30,6 +30,8 @@ target_link_libraries(Compiler.exe PUBLIC Main)
 target_link_libraries(Compiler.exe PUBLIC DynString)
 target_link_libraries(Compiler.exe PUBLIC DynArray)
 target_link_libraries(Compiler.exe PUBLIC TkWord_TkTable)
+target_link_libraries(Compiler.exe PUBLIC Error)
+target_link_libraries(Compiler.exe PUBLIC LexicalAnalyzer)
 
 add_custom_target(run
     COMMAND Compiler.exe
