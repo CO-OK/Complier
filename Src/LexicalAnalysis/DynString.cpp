@@ -34,7 +34,7 @@ void DynString::reset(){
     }
     this->len=0;
     this->capacity=0;
-    this->data = new char[8];
+    this->data = new char[24];
     this->capacity=8;
 }
 
