@@ -2,10 +2,8 @@ cmake_minimum_required(VERSION 3.12)
 project(Complier LANGUAGES CXX)
 
 # 编译选项
-SET(CFLAGS "")
-SET(CMAKE_C_FLAGS "${CFLAGS}")
-
-
+SET(CXXFLAGS "-g")
+SET(CMAKE_CXX_FLAGS "${CXXFLAGS}")
 
 
 # 链接选项
@@ -32,8 +30,13 @@ target_link_libraries(Compiler.exe PUBLIC DynArray)
 target_link_libraries(Compiler.exe PUBLIC TkWord_TkTable)
 target_link_libraries(Compiler.exe PUBLIC Error)
 target_link_libraries(Compiler.exe PUBLIC LexicalAnalyzer)
-
+target_link_libraries(Compiler.exe PUBLIC ColorPrint)
 add_custom_target(run
     COMMAND Compiler.exe
+    WORKING_DIRECTORY .
+)
+
+add_custom_target(debug
+    COMMAND gdb Compiler.exe
     WORKING_DIRECTORY .
 )

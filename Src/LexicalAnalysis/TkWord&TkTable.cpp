@@ -20,6 +20,7 @@ TkWord* TkTable::tkwordFind(char* p,int keyno){
     TkWord*tp=nullptr;
     TkWord*tp1=this->tk_hashtable[keyno];
     while(tp1!=nullptr){
+        
         if(!strcmp(p,tp1->spelling)){
             tp=tp1;
             //token=tp1->tkcode
@@ -36,7 +37,9 @@ TkWord* TkTable::tkwordInsert(char*p){
    
     int keyno=elf_hash(p);
     TkWord*tp=this->tkwordFind(p,keyno);
+    
     if(tp==nullptr){
+        
         int length=strlen(p);
         tp = new TkWord;
         tp->next=this->tk_hashtable[keyno];//头插法
@@ -106,7 +109,9 @@ TkTable::TkTable(){
         {0,nullptr,nullptr,nullptr,nullptr}
 
     };
-    
+    for(int i=0;i<MAXKEY;i++){
+        this->tk_hashtable[i]=nullptr;
+    }
     for(TkWord*tp=&keywords[0];tp->spelling!=nullptr;tp++){
         //std::cout<<tp->spelling<<std::endl;
         this->tkwordDirectInsert(tp);

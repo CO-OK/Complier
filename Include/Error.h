@@ -1,4 +1,6 @@
 typedef __builtin_va_list va_list;
+#define va_start(ap, param) __builtin_va_start(ap, param)
+#define va_end(ap)          __builtin_va_end(ap)
 /*错误枚举*/
 enum e_ErrorLevel{
     /*错误级别*/

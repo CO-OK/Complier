@@ -1,9 +1,8 @@
 #include<iostream>
-#include<TkWord&TkTable.h>
+#include<LexicalAnalyzer.h>
 using namespace std;
 int main(){
     //cout<<"success"<<endl;
     //return 0;
-    TkTable table;
-    
+    LexicalAnalyzer analyzer("./test.c");
 }

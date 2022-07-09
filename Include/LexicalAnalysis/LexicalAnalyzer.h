@@ -15,7 +15,7 @@ public:
 
     std::ifstream fin; //源文件读
 
-
+    
     //词法分析过程
     void getch();//从源文件中读取一个字符
     void getToken();//取单词
@@ -26,9 +26,15 @@ public:
     bool isDigit(char c);//判断是否为数字
     void parseIdentifier();//解析标识符
     void parseNum();//解析整形常量
-    void parseString(char c);//解析字符串
+    void parseString(char sep);//解析字符串
 
     //错误处理
     void skip(int c);//跳过单词
     char* get_tkstr(int v);//取得单词v所代表的源码字符串
+
+    //输出彩色
+    void printColorToken();
+
+    //构造函数
+    LexicalAnalyzer(char* path);
 };

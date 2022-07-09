@@ -30,12 +30,11 @@ void DynString::reset(){
         先删除再初始化，分配八个字节
     */
     if(this->data){
-        delete[] this->data;
+        delete this->data;
     }
     this->len=0;
-    this->capacity=0;
     this->data = new char[24];
-    this->capacity=8;
+    this->capacity=24;
 }
 
 void DynString::realloc(int new_size){
@@ -53,7 +52,7 @@ void DynString::realloc(int new_size){
     char*new_data=new char[new_capacity];
     memcpy(new_data,this->data,this->len);
 
-    delete[] this->data;
+    delete this->data;
     this->data=new_data;
     this->capacity=new_capacity;
 }

@@ -45,7 +45,7 @@ void DynArray::realloc(int new_size){
     
 
     for(int i=0;i<this->len;i++){
-       if(this->data[i]){
+       if(this->data[i]!=nullptr){
            new_data[i]=this->data[i];
            //delete this->data[i];
            this->data[i]=nullptr;

@@ -8,3 +8,8 @@ add_library(Error
     Error.cpp
 )
 
+add_library(ColorPrint
+    OBJECT
+    ColorPrint.cpp
+)
+
